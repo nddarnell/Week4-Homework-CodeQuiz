@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="./assets/styles.css">
     <title>Code Quiz</title>
 </head>
+
 <body>
+    <!-- I believe these two text items are fine, added the button ability to them as a side item -->
     <div>
         <div class="row">
             <div class="col-sm-6">
@@ -18,19 +20,48 @@
             </div>
 
             <div class="col-sm-5">
-                <a class="navbar-brand float-right" href="./assets/rules.html">Time Remaining = </a>
+                <a class="navbar-brand float-right" href="./assets/rules.html">Time Remaining =</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-
+<!-- This one is going to have top change / add an ID for the actual counter var count = 60, --count -->
             <div class="col-sm-1">
-                <p class="navbar-brand float-right">Counter</p>
+                <!-- id for the Counter -->
+                <p id="counter" class="navbar-brand float-right">60</p>
             </div>
         </div>
-    </div>
 
-    
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="text-center">
+                    <!-- id for the Questions -->
+                    <h5 id="question" class="question">Is JavaScript case sensitive?</h5>
+                </div>
+            </div>
+        </div>
+<!-- Buttons below this, id's required to have js switch between questions, text.content setAttribute etc. , set attribute class="active" on click-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="list-group">
+                    <!-- id for the Options -->
+                    <button id="optionOne" type="button" class="w-25 mx-auto mt-10 list-group-item list-group-item-action active answerOne">Yes</button>
+                    <button id="optionTwo" type="button" class="w-25 mx-auto mt-10 list-group-item list-group-item-action answerTwo">No</button>
+                    <button id="optionThree" type="button" class="w-25 mx-auto mt-10 list-group-item list-group-item-action answerThree">JavaScript isnt real.</button>
+                    <button id="optionFour" type="button" class="w-25 mx-auto mt-10 list-group-item list-group-item-action answerFour">I think I'm taking the wrong test.</button>
+                </div>
+            </div>
+        </div>
+        <hr width="25%">
+        
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <button onclick="myTimerObj.start()" type="button" class="btn btn-primary">Start Quiz!</button>
+            </div>
+        </div>
+        <!-- Add a text.content item below to tell the person if they were wrong or correct? -->
+
+    </div>
 
 
 
