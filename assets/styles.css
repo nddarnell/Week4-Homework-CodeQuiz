@@ -4,12 +4,10 @@
 #question2:after {
     content: "What are JavaScript Data Types?"
 }
-/* #question3:after {
-    content: "What is LocalStorage?"
-} */
+
 /* answers to question 1 below */
 #optionOne:after {
-    content: "Yes"
+    content: "I think I'm taking the wrong test."
 }
 #optionTwo:after {
     content: "No"
@@ -18,7 +16,7 @@
     content: "JavaScript isnt real."
 }
 #optionFour:after {
-    content: "I think I'm taking the wrong test."
+    content: "Yes duh!"
 }
 
 /* answers to question 2 below */
@@ -35,19 +33,7 @@
     content: "All of the above"
 }
 
-/* answers to question 3 below */
-/* #answerThreeOne:after {
-    content: "Local Storage is a storage unit you can rent to keep your personal belongings."
-}
-#answerThreeTwo:after {
-    content: "Local Storage is a type of web browser storage that stores data on the web browser with no expiration date."
-}
-#answerThreeThree:after {
-    content: "Local Storage is a type of web browser storage that stores data up until you leave or refresh the webpage."
-}
-#answerThreeFour:after {
-    content: "Local storage has nothing to do with JavaScript."
-} */
+
 
 
 .highlight:hover {

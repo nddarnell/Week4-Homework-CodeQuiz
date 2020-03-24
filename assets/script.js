@@ -6,17 +6,31 @@ var optionThree = document.querySelector("#optionThree");
 var optionFour = document.querySelector("#optionFour");
 var startButton = document.querySelector("#startButton");
 var optionOneAnswer = document.querySelector("#optionOne");
+var list = document.querySelector(".list-group")
 
 var myTimerObj = (function (document) {
 
     var myTimer;
+    var correct = false;
+    var incorrect = false;
+    var count = 60;
 
     function start() {
         myTimer = setInterval(secondsRemaining, 1000);
-        var count = 60;
 
         function secondsRemaining() {
             document.getElementById("counter").innerHTML = --count;
+            if (myTimerObj.correct == true){
+                count = count+7
+                document.getElementById("counter").innerHTML = count;
+                myTimerObj.correct = false;
+            }
+            else if (myTimerObj.incorrect == true){
+                count = count-5
+                document.getElementById("counter").innerHTML = count;
+                myTimerObj.incorrect = false;
+            }
+
             if (count == 0) {
                 clearInterval(myTimer);
                 alert("Reached zero");
@@ -29,8 +43,11 @@ var myTimerObj = (function (document) {
     }
     return { start: start, end: end };
 })(document);
+
+
 // Below is for questions one switching to question 2
 optionOne.addEventListener("click", function(){
+    myTimerObj.incorrect = true;
     question.setAttribute("id", "question2")
     optionOne.setAttribute("id", "answerTwoOne")
     optionTwo.setAttribute("id", "answerTwoTwo")
@@ -38,6 +55,7 @@ optionOne.addEventListener("click", function(){
     optionFour.setAttribute("id", "answerTwoFour")
 })
 optionTwo.addEventListener("click", function(){
+    myTimerObj.incorrect = true;
     question.setAttribute("id", "question2")
     optionOne.setAttribute("id", "answerTwoOne")
     optionTwo.setAttribute("id", "answerTwoTwo")
@@ -45,6 +63,7 @@ optionTwo.addEventListener("click", function(){
     optionFour.setAttribute("id", "answerTwoFour")
 })
 optionThree.addEventListener("click", function(){
+    myTimerObj.incorrect = true;
     question.setAttribute("id", "question2")
     optionOne.setAttribute("id", "answerTwoOne")
     optionTwo.setAttribute("id", "answerTwoTwo")
@@ -52,17 +71,17 @@ optionThree.addEventListener("click", function(){
     optionFour.setAttribute("id", "answerTwoFour")
 })
 optionFour.addEventListener("click", function(){
+    myTimerObj.correct = true;
     question.setAttribute("id", "question2")
     optionOne.setAttribute("id", "answerTwoOne")
     optionTwo.setAttribute("id", "answerTwoTwo")
     optionThree.setAttribute("id", "answerTwoThree")
     optionFour.setAttribute("id", "answerTwoFour")
 })
+// needs to switch to another page after all of the questions answered
+// probably requires a loop
+// use todos activity 28 for submit button
 
-// ughghghhghghg this doesnt work keep trying
-optionOne.addEventListener("click", function(){
-    var addTime = start.setInterval(add, 7000)
-    function add() {
-        document.getElementById("counter").innerHTML = 7+count;
-    }
-})
+var final = myTimerObj.count
+
+document.getElementById("#final").innerHTML = final;
