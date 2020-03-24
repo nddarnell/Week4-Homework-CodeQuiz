@@ -1,30 +1,55 @@
-.question2 {
+#question:after {
+    content: "Is JavaScript case sensitive?"
+}
+#question2:after {
     content: "What are JavaScript Data Types?"
 }
-.question3 {
+/* #question3:after {
     content: "What is LocalStorage?"
+} */
+/* answers to question 1 below */
+#optionOne:after {
+    content: "Yes"
 }
-.answerTwoOne {
+#optionTwo:after {
+    content: "No"
+}
+#optionThree:after {
+    content: "JavaScript isnt real."
+}
+#optionFour:after {
+    content: "I think I'm taking the wrong test."
+}
+
+/* answers to question 2 below */
+#answerTwoOne:after {
     content: "Numbers"
 }
-.answerTwoTwo {
+#answerTwoTwo:after {
     content: "Strings"
 }
-.answerTwoThree {
+#answerTwoThree:after {
     content: "Booleans/Object"
 }
-.answerTwoFour {
+#answerTwoFour:after {
     content: "All of the above"
 }
-.answerThreeOne {
+
+/* answers to question 3 below */
+/* #answerThreeOne:after {
     content: "Local Storage is a storage unit you can rent to keep your personal belongings."
 }
-.answerThreeTwo {
+#answerThreeTwo:after {
     content: "Local Storage is a type of web browser storage that stores data on the web browser with no expiration date."
 }
-.answerThreeThree {
+#answerThreeThree:after {
     content: "Local Storage is a type of web browser storage that stores data up until you leave or refresh the webpage."
 }
-.answerThreeFour {
+#answerThreeFour:after {
     content: "Local storage has nothing to do with JavaScript."
+} */
+
+
+.highlight:hover {
+    background-color: aquamarine;
 }

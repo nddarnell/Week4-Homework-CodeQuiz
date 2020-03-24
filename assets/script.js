@@ -1,10 +1,11 @@
 var counter = document.querySelector("#counter");
-var questions = document.querySelector("#questions");
+var question = document.querySelector("#question");
 var optionOne = document.querySelector("#optionOne");
 var optionTwo = document.querySelector("#optionTwo");
 var optionThree = document.querySelector("#optionThree");
 var optionFour = document.querySelector("#optionFour");
 var startButton = document.querySelector("#startButton");
+var optionOneAnswer = document.querySelector("#optionOne");
 
 var myTimerObj = (function (document) {
 
@@ -28,9 +29,40 @@ var myTimerObj = (function (document) {
     }
     return { start: start, end: end };
 })(document);
+// Below is for questions one switching to question 2
+optionOne.addEventListener("click", function(){
+    question.setAttribute("id", "question2")
+    optionOne.setAttribute("id", "answerTwoOne")
+    optionTwo.setAttribute("id", "answerTwoTwo")
+    optionThree.setAttribute("id", "answerTwoThree")
+    optionFour.setAttribute("id", "answerTwoFour")
+})
+optionTwo.addEventListener("click", function(){
+    question.setAttribute("id", "question2")
+    optionOne.setAttribute("id", "answerTwoOne")
+    optionTwo.setAttribute("id", "answerTwoTwo")
+    optionThree.setAttribute("id", "answerTwoThree")
+    optionFour.setAttribute("id", "answerTwoFour")
+})
+optionThree.addEventListener("click", function(){
+    question.setAttribute("id", "question2")
+    optionOne.setAttribute("id", "answerTwoOne")
+    optionTwo.setAttribute("id", "answerTwoTwo")
+    optionThree.setAttribute("id", "answerTwoThree")
+    optionFour.setAttribute("id", "answerTwoFour")
+})
+optionFour.addEventListener("click", function(){
+    question.setAttribute("id", "question2")
+    optionOne.setAttribute("id", "answerTwoOne")
+    optionTwo.setAttribute("id", "answerTwoTwo")
+    optionThree.setAttribute("id", "answerTwoThree")
+    optionFour.setAttribute("id", "answerTwoFour")
+})
 
-// Need to add a question that pops up (3 of them) and doesnt change until an option is clicked
-function nextQuestion (){
-
-}
-// Use css to change questions and options? setAttribute("class", "question2")?
+// ughghghhghghg this doesnt work keep trying
+optionOne.addEventListener("click", function(){
+    var addTime = start.setInterval(add, 7000)
+    function add() {
+        document.getElementById("counter").innerHTML = 7+count;
+    }
+})
