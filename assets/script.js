@@ -14,6 +14,7 @@ var myTimerObj = (function (document) {
     var correct = false;
     var incorrect = false;
     var count = 60;
+    var stop = document.querySelector("#stopTimer")
 
     function start() {
         myTimer = setInterval(secondsRemaining, 1000);
@@ -26,10 +27,16 @@ var myTimerObj = (function (document) {
                 myTimerObj.correct = false;
             }
             else if (myTimerObj.incorrect == true){
-                count = count-5
+                count = count-20
                 document.getElementById("counter").innerHTML = count;
                 myTimerObj.incorrect = false;
             }
+            // this is where we can stop the timer.
+            stop.addEventListener("click", function(){
+                clearInterval(myTimer);
+                location.href="./assets/highscore.html"
+            })
+
 
             if (count == 0) {
                 clearInterval(myTimer);
@@ -81,7 +88,3 @@ optionFour.addEventListener("click", function(){
 // needs to switch to another page after all of the questions answered
 // probably requires a loop
 // use todos activity 28 for submit button
-
-var final = myTimerObj.count
-
-document.getElementById("#final").innerHTML = final;
