@@ -54,12 +54,28 @@ var myTimerObj = (function (document) {
 
 // Below is for questions one switching to question 2
 optionOne.addEventListener("click", function(){
-    myTimerObj.incorrect = true;
-    question.setAttribute("id", "question2")
-    optionOne.setAttribute("id", "answerTwoOne")
-    optionTwo.setAttribute("id", "answerTwoTwo")
-    optionThree.setAttribute("id", "answerTwoThree")
-    optionFour.setAttribute("id", "answerTwoFour")
+    // myTimerObj.incorrect = true;
+    // question.setAttribute("id", "question2")
+    // optionOne.setAttribute("id", "answerTwoOne")
+    // optionTwo.setAttribute("id", "answerTwoTwo")
+    // optionThree.setAttribute("id", "answerTwoThree")
+    // optionFour.setAttribute("id", "answerTwoFour")
+    switch(optionOne.className){
+        case "number1":
+            console.log("brandon");
+            break;
+        case "w-25 mx-auto mt-10 list-group-item list-group-item-action highlight":
+            console.log("joe");
+            optionOne.setAttribute("class", "number2 w-25 mx-auto mt-10 list-group-item list-group-item-action highlight")
+            // all options would go here to change all of the options on the screen class name "number2" not defined on css content
+            myTimerObj.incorrect = true;
+            break;
+        case "number2 w-25 mx-auto mt-10 list-group-item list-group-item-action highlight":
+            console.log("this");
+            optionOne.setAttribute("class", "number3 w-25 mx-auto mt-10 list-group-item list-group-item-action highlight")
+            myTimerObj.correct = true;
+            break;
+    }
 })
 optionTwo.addEventListener("click", function(){
     myTimerObj.incorrect = true;
@@ -85,6 +101,8 @@ optionFour.addEventListener("click", function(){
     optionThree.setAttribute("id", "answerTwoThree")
     optionFour.setAttribute("id", "answerTwoFour")
 })
+// change setattribute by class or get attribute and have it change to the question/option you need and then if true switch to another class? qwiujbfscvedsiwuwgedsihebv
+
 // needs to switch to another page after all of the questions answered
 // probably requires a loop
 // use todos activity 28 for submit button
