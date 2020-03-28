@@ -28,7 +28,7 @@
 <!-- This one is going to have top change / add an ID for the actual counter var count = 60, --count -->
             <div class="col-sm-1">
                 <!-- id for the Counter -->
-                <p id="counter" class="navbar-brand float-right">60</p>
+                <p id="counter" class="navbar-brand float-right">75</p>
             </div>
         </div>
 
@@ -36,7 +36,14 @@
             <div class="col-sm-12">
                 <div class="text-center">
                     <!-- id for the Questions -->
-                    <h5 id="question"></h5>
+                    <h5 id="question" class="questions"></h5>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="text-center">
+                    <h6 id="afterFiveHeader" class=""></h6>
                 </div>
             </div>
         </div>
@@ -45,10 +52,10 @@
             <div class="col-sm-12">
                 <div class="list-group">
                     <!-- id for the Options -->
-                    <button id="optionOne" type="button" class="w-25 mx-auto mt-10 list-group-item list-group-item-action highlight"></button>
-                    <button id="optionTwo" type="button" class="w-25 mx-auto mt-10 list-group-item list-group-item-action highlight"></button>
-                    <button id="optionThree" type="button" class="w-25 mx-auto mt-10 list-group-item list-group-item-action highlight"></button>
-                    <button id="optionFour" type="button" class="w-25 mx-auto mt-10 list-group-item list-group-item-action highlight"></button>
+                    <button id="optionOne" type="button" class="question1OptionOne w-25 mx-auto mt-10 list-group-item list-group-item-action highlight"></button>
+                    <button id="optionTwo" type="button" class="question1OptionTwo w-25 mx-auto mt-10 list-group-item list-group-item-action highlight"></button>
+                    <button id="optionThree" type="button" class="question1OptionThree w-25 mx-auto mt-10 list-group-item list-group-item-action highlight"></button>
+                    <button id="optionFour" type="button" class="question1OptionFour w-25 mx-auto mt-10 list-group-item list-group-item-action highlight"></button>
                 </div>
             </div>
         </div>
@@ -64,7 +71,31 @@
                 <button id="stopTimer" type="button" class="btn btn-primary">Stop Quiz!</button>
             </div>
         </div>
-    
+        <!-- pulled from activity 28 -->
+        <div class="todos">
+
+            <form id="todo-form" method="POST">
+      
+              <label for="todo-text">Add a Todo:</label>
+      
+              <input type="text" placeholder="What needs to be done?" name="todo-text" id="todo-text" />
+      
+            </form>
+            
+            <p>Todo Count: <span id="todo-count">0</span></p>
+      
+            <ul id="todo-list"></ul>
+      
+          </div>
+        <!-- pulled from act. 28 -->
+
+        <div>
+            <div class="row">
+                <div class="col-sm-12 text-center mt-2">
+                    <p>Your Score: <span id="playerScore"></span></p>
+                </div>
+            </div>
+        </div>
 
     </div>
 

@@ -1,12 +1,13 @@
-#question:after {
+/* answers to question 1 below - May delete if classes work better*/
+/* #question:after {
     content: "Is JavaScript case sensitive?"
 }
 #question2:after {
     content: "What are JavaScript Data Types?"
 }
 
-/* answers to question 1 below */
-#optionOne:after {
+/* answers to question 1 below - May delete if classes work better*/
+/* #optionOne:after {
     content: "I think I'm taking the wrong test."
 }
 #optionTwo:after {
@@ -17,10 +18,10 @@
 }
 #optionFour:after {
     content: "Yes duh!"
-}
+} */
 
-/* answers to question 2 below */
-#answerTwoOne:after {
+/* answers to question 2 below - May delete if classes work better*/
+/* #answerTwoOne:after {
     content: "Numbers"
 }
 #answerTwoTwo:after {
@@ -31,10 +32,101 @@
 }
 #answerTwoFour:after {
     content: "All of the above"
+}  */
+.questions:after {
+    content: "Pittsburgh is home to which NFL Organization?"
 }
-
-
-
+.questionsTwo:after {
+    content: "Pittsburgh is also home to which Professional Baseball team?"
+}
+.questionsThree:after {
+    content: "Which NHL Team has the most Stanley Cup Championships?"
+}
+.questionsFour:after {
+    content: "Which NFL Team has the most Super Bowl Wins?"
+}
+.questionsFive:after { 
+    content: "Which MLB team is located in Arizona?"
+}
+/* Question 1 options */
+.question1OptionOne:after {
+    content: "Eagles, the probably losingest team in history."
+}
+.question1OptionTwo:after {
+    content: "Steelers, the team with the best culture around it."
+    /* correct */
+}
+.question1OptionThree:after {
+    content: "Panthers, the one that should have kept Cam Newton?"
+}
+.question1OptionFour:after {
+    content: "Broncos, Peyton Manning?"
+}
+/* Question 2 options */
+.question2OptionOne:after {
+    content: "Pirates, although they're hardly considered professional!"
+    /* correct */
+}
+.question2OptionTwo:after {
+    content: "Reds, the biggest joke in all of baseball!"
+}
+.question2OptionThree:after {
+    content: "Cardinals, the greatest franchise to grace Major League Baseball"
+}
+.question2OptionFour:after {
+    content: "Athletics, the Billy Bean dream team!"
+}
+/* Question 3 options */
+.question3OptionOne:after {
+    content: "Pittsburgh Penguins, they have the greatest player in the world on that team!"
+}
+.question3OptionTwo:after {
+    content: "Toronto Maple Leafs... bahaha what a joke"
+}
+.question3OptionThree:after {
+    content: "Montreal Canadiens, is this a real team?"
+    /* correct */
+}
+.question3OptionFour:after {
+    content: "Boston Bruins, and the guy who licks people!"
+}
+/* Question 4 options */
+.question4OptionOne:after {
+    content: "Trick question, the Pittsburgh Steelers and the New England Patriots both have 6."
+    /* correct */
+}
+.question4OptionTwo:after {
+    content: "Arizona Cardinals! They went to one Super Bowl and won!"
+}
+.question4OptionThree:after {
+    content: "New York Jets! The same team with a losing record the past 4 seasons.."
+}
+.question4OptionFour:after {
+    content: "San Francisco 49ers! Thanks to Jerry Rice of course!"
+}
+/* Question 5 options */
+.question5OptionOne:after {
+    content: "Arizona Cardinals? That doesnt sound right.. does it?"
+}
+.question5OptionTwo:after {
+    content: "Arizona Coyotes? Which sport are we talking about?"
+}
+.question5OptionThree:after {
+    content: "Phoenix Suns? I might be thinking of basketball with this one?"
+}
+.question5OptionFour:after {
+    content: "Arizona Diamondbacks? You know, the team that is almost good enough every year?"
+    /* correct */
+}
+.afterFiveH2:after {
+    content: "After you select your answer press the Stop Quiz button.";
+    background-color: yellow;
+    animation: blink 3s infinite;
+}
+@keyframes blink {
+    from {background-color: white};
+    to {background-color: rgb(255, 255, 0)};
+}
 
 .highlight:hover {
     background-color: aquamarine;
