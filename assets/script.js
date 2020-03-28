@@ -40,40 +40,30 @@ var myTimerObj = (function (document) {
                 alert("Reached zero");
             }
         }
-        //stop event was here
-    }
-    // stop.addEventListener("click", function(){
-    //     clearInterval(myTimer);
-    //     localStorage.setItem("Time Remaining", count);
-    //     const extractedTime = localStorage.getItem("Time Remaining");
-    //     playerScore.append(extractedTime)
-    //     // location.href = "./assets/highscore.html";
-    //     // below is other ways to display the extracted time
-    //     // playerScore.append(document.createTextNode(extractedTime))
-    //     // playerScore.innerHTML = 
         
-    // })
-    var playerScore = document.querySelector("#playerScore")
-
-    stop.addEventListener("click", function(){
-        clearInterval(myTimer);
-        var playerName = prompt("What is your name?");
-        var scores = [];
-        if (localStorage.getItem("scores") != null){
-            var scores = JSON.parse(localStorage.getItem("scores"));
-            console.log({name: playerName, score: playerHighscores.innerHTML});
-            scores.push({name: playerName, score: playerHighscores.innerHTML});
-            console.log(scores);
-            localStorage.setItem("scores", JSON.stringify(scores));
-        }else{
-            scores.push({name: playerName, score: playerHighscores.innerHTML});
-            console.log({name: playerName, score: playerHighscores.innerHTML});
-            console.log(scores);
-            localStorage.setItem("scores", JSON.stringify(scores));
-        }
-        window.location.href = "./assets/highscore.html"
-    })
+    }
     
+    if(stop != null){
+
+        stop.addEventListener("click", function(){
+            clearInterval(myTimer);
+            var playerName = prompt("What is your name?");
+            var scores = [];
+            if (localStorage.getItem("scores") != null){
+                var scores = JSON.parse(localStorage.getItem("scores"));
+                console.log({name: playerName, score: counter.innerHTML});
+                scores.push({name: playerName, score: counter.innerHTML});
+                console.log(scores);
+                localStorage.setItem("scores", JSON.stringify(scores));
+            }else{
+                scores.push({name: playerName, score: counter.innerHTML});
+                console.log({name: playerName, score: counter.innerHTML});
+                console.log(scores);
+                localStorage.setItem("scores", JSON.stringify(scores));
+            }
+            window.location.href = "./assets/highscore.html"
+    })
+    }
 
     function end() {
         clearInterval(myTimer)
@@ -81,7 +71,8 @@ var myTimerObj = (function (document) {
     return { start: start, end: end };
 })(document);
 
-optionOne.addEventListener("click", function(){
+if(optionOne != null){
+    optionOne.addEventListener("click", function(){
     switch(optionOne.className){
         case "question1OptionOne w-25 mx-auto mt-10 list-group-item list-group-item-action highlight":
             myTimerObj.incorrect = true;
@@ -120,8 +111,8 @@ optionOne.addEventListener("click", function(){
             myTimerObj.incorrect = true;
             break;
     }
-})
-optionTwo.addEventListener("click", function(){
+    })
+    optionTwo.addEventListener("click", function(){
     switch(optionTwo.className){
         case "question1OptionTwo w-25 mx-auto mt-10 list-group-item list-group-item-action highlight":
             myTimerObj.correct = true;
@@ -160,8 +151,8 @@ optionTwo.addEventListener("click", function(){
             myTimerObj.incorrect = true;
             break;
     }
-})
-optionThree.addEventListener("click", function(){
+    })
+    optionThree.addEventListener("click", function(){
     switch(optionThree.className){
         case "question1OptionThree w-25 mx-auto mt-10 list-group-item list-group-item-action highlight":
             myTimerObj.incorrect = true;
@@ -200,8 +191,8 @@ optionThree.addEventListener("click", function(){
             myTimerObj.incorrect = true;
             break;
     }
-})
-optionFour.addEventListener("click", function(){
+    })
+    optionFour.addEventListener("click", function(){
     switch(optionFour.className){
         case "question1OptionFour w-25 mx-auto mt-10 list-group-item list-group-item-action highlight":
             myTimerObj.incorrect = true;
@@ -240,7 +231,8 @@ optionFour.addEventListener("click", function(){
             myTimerObj.correct = true;
             break;
     }
-})
+    })
+}
 
 if (document.getElementById("playerHighscores")!= null){
     var highScores = document.getElementById("playerHighscores");
