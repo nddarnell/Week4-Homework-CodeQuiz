@@ -40,17 +40,39 @@ var myTimerObj = (function (document) {
                 alert("Reached zero");
             }
         }
-        stop.addEventListener("click", function(){
-            clearInterval(myTimer);
-            localStorage.setItem("Time Remaining", count);
-            const extractedTime = localStorage.getItem("Time Remaining");
-            playerScore.append(extractedTime)
-            // location.href = "./assets/highscore.html";
-            // below is other ways to display the extracted time
-            // playerScore.append(document.createTextNode(extractedTime))
-            // playerScore.innerHTML = extractedTime
-        })
+        //stop event was here
     }
+    // stop.addEventListener("click", function(){
+    //     clearInterval(myTimer);
+    //     localStorage.setItem("Time Remaining", count);
+    //     const extractedTime = localStorage.getItem("Time Remaining");
+    //     playerScore.append(extractedTime)
+    //     // location.href = "./assets/highscore.html";
+    //     // below is other ways to display the extracted time
+    //     // playerScore.append(document.createTextNode(extractedTime))
+    //     // playerScore.innerHTML = 
+        
+    // })
+    var playerScore = document.querySelector("#playerScore")
+
+    stop.addEventListener("click", function(){
+        clearInterval(myTimer);
+        var playerName = prompt("What is your name?");
+        var scores = [];
+        if (localStorage.getItem("scores") != null){
+            var scores = JSON.parse(localStorage.getItem("scores"));
+            console.log({name: playerName, score: playerHighscores.innerHTML});
+            scores.push({name: playerName, score: playerHighscores.innerHTML});
+            console.log(scores);
+            localStorage.setItem("scores", JSON.stringify(scores));
+        }else{
+            scores.push({name: playerName, score: playerHighscores.innerHTML});
+            console.log({name: playerName, score: playerHighscores.innerHTML});
+            console.log(scores);
+            localStorage.setItem("scores", JSON.stringify(scores));
+        }
+        window.location.href = "./assets/highscore.html"
+    })
     
 
     function end() {
@@ -58,14 +80,6 @@ var myTimerObj = (function (document) {
     }
     return { start: start, end: end };
 })(document);
-
-// this worked after CALLING the function.
-
-document.getElementById("todo-text").onkeypress = function(){myFunction};
-function myFunction(){
-    document.getElementById("todo-text").style.backgroundColor = "red";
-}
-myFunction();
 
 optionOne.addEventListener("click", function(){
     switch(optionOne.className){
@@ -228,90 +242,29 @@ optionFour.addEventListener("click", function(){
     }
 })
 
-// // pulled from act.28
-// var todoInput = document.querySelector("#todo-text");
-// var todoForm = document.querySelector("#todo-form");
-// var todoList = document.querySelector("#todo-list");
-// var todoCountSpan = document.querySelector("#todo-count");
+if (document.getElementById("playerHighscores")!= null){
+    var highScores = document.getElementById("playerHighscores");
+    var sortable = [];
+    var scores = JSON.parse(localStorage.getItem("scores"));
 
-// var todos = [];
+    for (x = 0; x < scores.length; x++) {
+        sortable.push([
+            scores[x].name,
+            scores[x].score
+        ])
+    }
 
-// init();
+    sortable.sort(function(a, b){
+        return b[1] - a[1];
+    })
 
-// function renderTodos() {
-//   // Clear todoList element and update todoCountSpan
-//   todoList.innerHTML = "";
-//   todoCountSpan.textContent = todos.length;
+    for (x = 0; x < sortable.length; x++) {
+        var newItem = document.createElement("li");
+        var text = document.createTextNode(sortable[x][0] + ": " + sortable[x][1]);
+        newItem.appendChild(text);
+        highScores.appendChild(newItem);
+    }
 
-//   // Render a new li for each todo
-//   for (var i = 0; i < todos.length; i++) {
-//     var todo = todos[i];
-
-//     var li = document.createElement("li");
-//     li.textContent = todo;
-//     li.setAttribute("data-index", i);
-
-//     var button = document.createElement("button");
-//     button.textContent = "Complete";
-
-//     li.appendChild(button);
-//     todoList.appendChild(li);
-//   }
-// }
-
-// function init() {
-//   // Get stored todos from localStorage
-//   // Parsing the JSON string to an object
-//   var storedTodos = JSON.parse(localStorage.getItem("todos"));
-
-//   // If todos were retrieved from localStorage, update the todos array to it
-//   if (storedTodos !== null) {
-//     todos = storedTodos;
-//   }
-
-//   // Render todos to the DOM
-//   renderTodos();
-// }
-
-// function storeTodos() {
-//   // Stringify and set "todos" key in localStorage to todos array
-//   localStorage.setItem("todos", JSON.stringify(todos));
-// }
-
-// // When form is submitted...
-// todoForm.addEventListener("submit", function(event) {
-//   event.preventDefault();
-
-//   var todoText = todoInput.value.trim();
-
-//   // Return from function early if submitted todoText is blank
-//   if (todoText === "") {
-//     return;
-//   }
-
-//   // Add new todoText to todos array, clear the input
-//   todos.push(todoText);
-//   todoInput.value = "";
-
-//   // Store updated todos in localStorage, re-render the list
-//   storeTodos();
-//   renderTodos();
-// });
-
-// // When a element inside of the todoList is clicked...
-// todoList.addEventListener("click", function(event) {
-//   var element = event.target;
-
-//   // If that element is a button...
-//   if (element.matches("button") === true) {
-//     // Get its data-index value and remove the todo element from the list
-//     var index = element.parentElement.getAttribute("data-index");
-//     todos.splice(index, 1);
-
-//     // Store updated todos in localStorage, re-render the list
-//     storeTodos();
-//     renderTodos();
-//   }
-// });
-
-
+    document.getElementById("newTime").innerHTML =
+        localStorage.key(0)[0].toUpperCase() + localStorage.key(0).slice(1) + ": ";
+}
